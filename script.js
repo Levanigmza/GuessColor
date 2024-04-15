@@ -31,7 +31,7 @@ function startGame(selectedLevel) {
 
     targetColor = generateRandomColor();
     const rgbDisplay = document.getElementById('rgbDisplay');
-    rgbDisplay.textContent = `გამოიცანი ფერი , კოდით: ${targetColor}`;
+    rgbDisplay.innerHTML = `გამოიცანი ფერი , კოდით: <strong>${targetColor}</strong>`;
 
     cards = [];
 
