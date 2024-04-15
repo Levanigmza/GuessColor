@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>გამოიცანი ფერი</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1 class="top-center">გამოიცანი ფერი</h1>
+    </header>
+    <div class="container">
+        <div class="head">
+            <div id="userInfo" class="top-left"></div>
+            <div id="resetgame" class="top-right">
+                <button onclick="resetGame()">თავიდან დაწყება</button>
+            </div>
+        </div>
+
+        <div class="starting">
+            <input type="text" id="userNameInput" class="center" placeholder="შეიყვანე შენი სახელი">
+            <div id="startBtn" class="center">
+                <button onclick="showLevelButtons()">თამაშის დაწყება</button>
+            </div>
+        </div>
+        <div id="rules">
+            <div id="rules_container">
+                <h3>წესები</h3>
+                <p>• მოთამაშეს აქვს 3 დონიდან ერთ-ერთის ამორჩევის უფლება (მარტივი, საშუალო, რთული)</p>
+                <p>• თითოეული დონე ნიშნავს ერთით მეტ რიგს (row).</p>
+                <p>• ფერი რაც უნდა გამოიცნოს მომხარებელმა შესაძლოა გამოვიდეს, როგორც rgb შიფრი </p>
+                <p>• სწორი ფერის არჩევის შემთხვევაში თამაში, თავიდან დააგენერირებს ახალ ფერებს,
+                    გამოიტანს success ალერტს და მოემატება ქულა დონის შესაბამისად, წინააღმდეგ შემთხვევაში გამოვა error
+                    ალერტი და ქულას დააკლებს.</p>
+                <p>• შეფასების სისტემა დონეების მიხედვით:</p>
+                <table>
+                    <tr>
+                        <th>დონე</th>
+                        <th>მოგება</th>
+                        <th>წაგება</th>
+                    </tr>
+                    <tr>
+                        <td>მარტივი</td>
+                        <td>+10</td>
+                        <td>-5</td>
+                    </tr>
+                    <tr>
+                        <td>საშუალო</td>
+                        <td>+20</td>
+                        <td>-10</td>
+                    </tr>
+                    <tr>
+                        <td>რთული</td>
+                        <td>+30</td>
+                        <td>-15</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+
+        <div class="levels">
+            <div id="rgbDisplay" class="center"></div>
+            <div id="levelButtons" class="center">
+                <h2>აირჩიე სირთულის დონე</h2>
+                <button onclick="startGame(3)">მარტივი</button>
+                <button onclick="startGame(6)">საშუალო</button>
+                <button onclick="startGame(9)">რთული</button>
+            </div>
+        </div>
+
+        <div class="show_cards">
+            <div id="cards"></div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; Levani Gamezardashvili</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
