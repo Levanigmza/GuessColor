@@ -152,14 +152,32 @@ button {
     display: none;
 }
 
+#levelchange{
+    display: none;
+}
+
+#levelchange button{
+    border: 1px solid #0c7715e7;
+    background-color: #168ca1;
+
+}
+#levelchange button:hover{
+    border: 1px solid #06360ae7;
+    background-color: #0a4751;
+    color:#FFFFFF;
+    font-weight: bold;
+
+}
+
 #resetgame button {
     border: 1px solid #20bb2de7;
-    background-color: #CBEA00;
+    background-color: #f7667b;
 }
 
 #resetgame button:hover {
-    border: 1px solid #db42ad;
-    background-color: #adc705;
+    border: 1px solid #106217e7;
+    background-color: #77303a;
+    color:#FFFFFF;
     font-weight: bold;
 }
 
@@ -207,9 +225,16 @@ td {
         flex-direction: column;
         gap: 20px;
     }
+
+    .starting input {
+        padding: 8px 16px;
+        font-size: 15px;
+        width: 50%;
+    }
     .starting {
         flex-direction: column;
         gap: 10px;
+        padding: 20px;
     }
     #cards {
         width: 100%;
@@ -220,8 +245,8 @@ td {
         height: 130px; 
         margin:10px
     }
-    #rules_container P {
-        width: 600px;
+    #rules_container p {
+        width: 520px;
     }
 }
 
@@ -230,23 +255,24 @@ td {
     .head {
         gap: 10px;
     }
-    .starting input,
-    button {
+    .starting input{
         padding: 8px 16px;
-        font-size: 14px;
+        font-size: 15px;
+        width: 65%;
     }
     #levelButtons button {
         margin: 5px;
         padding: 8px 12px;
         font-size: 14px;
     }
-    #rules_container P {
-        width: 386px;
+    #rules_container p {
+        width: 280px;
+
     }
     .card {
-        width: 90px;
-        height: 90px; /* Adjust as needed */
-        margin:10px
+        width: 80px;
+        height: 80px;
+        margin:1px
     }
     #cards {
         width: 100%;
