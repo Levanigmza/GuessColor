@@ -57,7 +57,7 @@ function startGame(selectedLevel) {
 
     const randomIndex = Math.floor(Math.random() * level);
     cards[randomIndex].style.backgroundColor = targetColor;
-    cards[randomIndex].textContent = " correct ";
+   // cards[randomIndex].textContent = " correct ";
 
 
     updateUserInfo();
