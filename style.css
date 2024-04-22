@@ -142,6 +142,8 @@ button {
     text-shadow: 3px 0px 7px rgb(255, 228, 193), -3px 0px 7px rgba(247, 0, 255, 0.8), 0px 4px 7px rgb(13, 58, 255);
     cursor: pointer;
     border-radius: 20px;
+    transition: border 0.4s ease-in, transform 0.4s ease-in-out; /* Apply transition to both border and transform */
+
 }
 
 .card:hover {
@@ -150,6 +152,7 @@ button {
     transform: rotate(90deg);
     transition: transform 0.4s ease-in;
 }
+
 
 #rgbDisplay {
     display: none;

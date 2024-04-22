@@ -69,10 +69,13 @@ function startGame(selectedLevel) {
 }
 
 function selectCard(card) {
-    cards.forEach((card) => {
-        if (card.style.backgroundColor === targetColor) {
-            card.classList.add('correct-card');
-            card.textContent = 'Correct';
+    cards.forEach((c) => {
+        if (c.style.backgroundColor === targetColor) {
+            c.classList.add('correct-card');
+            c.textContent = 'Correct';
+            if(c.style.backgroundColor === card.style.backgroundColor){
+                card.style.transform = 'rotate(-0.1deg)'  
+            }
         }
     });
     setTimeout(() => {
@@ -99,17 +102,57 @@ function  checkCGuess(card){
 
 
 function generateRandomColor() {
+    let r;
     let g;
-    const r = Math.floor(Math.random() * 256);
+    let b;
 
-    if (r > 200) {
-        g = Math.floor(Math.random() * 30);
+    if (level === 3) {
+         r = Math.floor(Math.random() * 256);
+        if (r > 180) {
+             g = Math.floor(Math.random() * 20);
+             b = Math.floor(Math.random() * 8);
+        }
+        else if(r <180 &&  r > 100){
+             g = Math.floor(Math.random() * 250);
+            if (g > 150){
+                 b = Math.floor(Math.random() * 30);
+            }
+            else{
+                 b = Math.floor(Math.random() * 20);
+            }
+        }
+        else{
+            g = Math.floor(Math.random() * 85);
+            b = Math.floor(Math.random() * 250);
 
+        }
+    }
+    else if (level === 6) {
+        r = Math.floor(Math.random() * 256);
+        if (r > 200) {
+             g = Math.floor(Math.random() * 100);
+             b = Math.floor(Math.random() * 180);
+        }
+        else if(r < 200 &&  r > 100){
+             g = Math.floor(Math.random() * 256);
+            if (g >200){
+                 b = Math.floor(Math.random() * 125);
+            }
+            else{
+                 b = Math.floor(Math.random() * 200);
+            }
+        }
+        else{
+            g = Math.floor(Math.random() * 150);
+            b = Math.floor(Math.random() * 256);
+
+        }
     }
     else {
-        g = Math.floor(Math.random() * 256);
+         r = Math.floor(Math.random() * 256);
+         g = Math.floor(Math.random() * 256);
+         b = Math.floor(Math.random() * 256);
     }
-    const b = Math.floor(Math.random() * 256);
 
     return `rgb(${r}, ${g}, ${b})`;
 }
