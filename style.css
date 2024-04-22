@@ -33,17 +33,20 @@ footer {
     gap: 100px;
     color: #FFFFFF;
 }
-.container{
+
+.container {
     display: block;
     min-height: 70vh;
 }
+
 footer {
     margin-top: 100px;
     height: 100px;
     text-align: center;
 
 }
-.head{
+
+.head {
     margin-top: 25px;
     display: flex;
     flex-direction: row;
@@ -130,7 +133,13 @@ button {
     width: 150px;
     height: 150px;
     border: 2px solid rgba(17, 0, 0, 0);
-
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+    text-shadow: 3px 0px 7px rgb(255, 228, 193), -3px 0px 7px rgba(247, 0, 255, 0.8), 0px 4px 7px rgb(13, 58, 255);
     cursor: pointer;
     border-radius: 20px;
 }
@@ -152,19 +161,20 @@ button {
     display: none;
 }
 
-#levelchange{
+#levelchange {
     display: none;
 }
 
-#levelchange button{
+#levelchange button {
     border: 1px solid #0c7715e7;
     background-color: #168ca1;
 
 }
-#levelchange button:hover{
+
+#levelchange button:hover {
     border: 1px solid #06360ae7;
     background-color: #0a4751;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-weight: bold;
 
 }
@@ -177,7 +187,7 @@ button {
 #resetgame button:hover {
     border: 1px solid #106217e7;
     background-color: #77303a;
-    color:#FFFFFF;
+    color: #FFFFFF;
     font-weight: bold;
 }
 
@@ -195,9 +205,11 @@ button {
     justify-content: center;
     margin-top: 100px;
 }
+
 #rules_container {
     display: block;
 }
+
 #rules_container h3 {
     text-align: center;
 }
@@ -219,6 +231,12 @@ td {
     border: 1px solid #b62b2b;
 }
 
+.correct-card {
+    border: 2px solid rgb(5, 56, 4);
+}
+
+
+
 
 @media only screen and (max-width: 768px) {
     .head {
@@ -231,20 +249,24 @@ td {
         font-size: 15px;
         width: 50%;
     }
+
     .starting {
         flex-direction: column;
         gap: 10px;
         padding: 20px;
     }
+
     #cards {
         width: 100%;
-        gap:5px
+        gap: 5px
     }
+
     .card {
         width: 130px;
-        height: 130px; 
-        margin:10px
+        height: 130px;
+        margin: 10px
     }
+
     #rules_container p {
         width: 520px;
     }
@@ -255,27 +277,32 @@ td {
     .head {
         gap: 10px;
     }
-    .starting input{
+
+    .starting input {
         padding: 8px 16px;
         font-size: 15px;
         width: 65%;
     }
+
     #levelButtons button {
         margin: 5px;
         padding: 8px 12px;
         font-size: 14px;
     }
+
     #rules_container p {
         width: 300px;
 
     }
+
     .card {
         width: 80px;
         height: 80px;
-        margin:1px
+        margin: 1px
     }
+
     #cards {
         width: 100%;
-        gap:15px
+        gap: 15px
     }
 }

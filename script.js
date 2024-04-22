@@ -3,6 +3,8 @@ let targetColor;
 let cards = [];
 let userName;
 let userPoints = 0;
+let randomIndex;
+
 
 startBtn = document.getElementById('startBtn');
 rules_container = document.getElementById('rules_container');
@@ -10,7 +12,7 @@ rules = document.getElementById('rules');
 levelButtons = document.getElementById('levelButtons');
 userInfo = document.getElementById('userInfo');
 userNameInput = document.getElementById('userNameInput');
-resetgame = document.getElementById('resetgame'); 
+resetgame = document.getElementById('resetgame');
 
 
 function showLevelButtons() {
@@ -26,7 +28,7 @@ function showLevelButtons() {
     levelButtons.style.display = 'block';
     userInfo.style.display = 'block';
     userNameInput.style.display = 'none';
-    resetgame.style.display = 'block'; 
+    resetgame.style.display = 'block';
 }
 
 function startGame(selectedLevel) {
@@ -55,10 +57,9 @@ function startGame(selectedLevel) {
         cards.push(card);
     }
 
-    const randomIndex = Math.floor(Math.random() * level);
+    randomIndex = Math.floor(Math.random() * level);
     cards[randomIndex].style.backgroundColor = targetColor;
-   // cards[randomIndex].textContent = " correct ";
-
+    //  cards[randomIndex].textContent = " correct";
 
     updateUserInfo();
     document.getElementById('resetgame').style.display = 'block';
@@ -68,43 +69,67 @@ function startGame(selectedLevel) {
 }
 
 function selectCard(card) {
+    cards.forEach((card) => {
+        if (card.style.backgroundColor === targetColor) {
+            card.classList.add('correct-card');
+            card.textContent = 'Correct';
+        }
+    });
+    setTimeout(() => {
+        checkCGuess(card)
+    }, 200);
+    updateUserInfo();
+}
+
+
+
+function  checkCGuess(card){
     if (card.style.backgroundColor === targetColor) {
         alert('გილოცავ შენ გამოიცანი  ფერი !');
         userPoints += getPoints();
         startGame(level);
     }
-         else {
-        alert('არჩეული ფერი არასწორია !  თავიდან სცადე  <3 ');
+    else {
+        alert('არჩეული ფერი არასწორია !  თავიდან სცადე <3');
         userPoints -= getPoints_Regress();
         startGame(level);
 
-     }
-    updateUserInfo();
+    }
 }
 
+
 function generateRandomColor() {
+    let g;
     const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
+
+    if (r > 200) {
+        g = Math.floor(Math.random() * 30);
+
+    }
+    else {
+        g = Math.floor(Math.random() * 256);
+    }
     const b = Math.floor(Math.random() * 256);
+
     return `rgb(${r}, ${g}, ${b})`;
 }
 
 function resetGame() {
-    if(confirm("ნამდვილად გსურთ თამაშის თავიდან დაწყება და არსებული პროგრესის განულება ?")){
-    userName = '';
-    userPoints = 0;
+    if (confirm("ნამდვილად გსურთ თამაშის თავიდან დაწყება და არსებული პროგრესის განულება ?")) {
+        userName = '';
+        userPoints = 0;
 
-    updateUserInfo();
-    document.getElementById('startBtn').style.display = 'block';
-    document.getElementById('levelButtons').style.display = 'none';
-    document.getElementById('cards').style.display = 'none';
-    document.getElementById('rgbDisplay').style.display = 'none';
-    document.getElementById('userInfo').style.display = 'none';
-    document.getElementById('userNameInput').style.display = 'block';
-    document.getElementById('resetgame').style.display = 'none';
-    document.getElementById('levelchange').style.display = 'none';
-    document.getElementById('rules_container').style.display = 'block';
-    document.getElementById('rules').style.display = 'flex';
+        updateUserInfo();
+        document.getElementById('startBtn').style.display = 'block';
+        document.getElementById('levelButtons').style.display = 'none';
+        document.getElementById('cards').style.display = 'none';
+        document.getElementById('rgbDisplay').style.display = 'none';
+        document.getElementById('userInfo').style.display = 'none';
+        document.getElementById('userNameInput').style.display = 'block';
+        document.getElementById('resetgame').style.display = 'none';
+        document.getElementById('levelchange').style.display = 'none';
+        document.getElementById('rules_container').style.display = 'block';
+        document.getElementById('rules').style.display = 'flex';
     }
 
 }
@@ -123,7 +148,7 @@ function levelchange() {
 
 
 function updateUserInfo() {
-    if(userPoints < 0){
+    if (userPoints < 0) {
         userPoints = 0;
     }
     const userInfo = document.getElementById('userInfo');
