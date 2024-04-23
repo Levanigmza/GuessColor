@@ -142,7 +142,8 @@ button {
     text-shadow: 3px 0px 7px rgb(255, 228, 193), -3px 0px 7px rgba(247, 0, 255, 0.8), 0px 4px 7px rgb(13, 58, 255);
     cursor: pointer;
     border-radius: 20px;
-    transition: border 0.4s ease-in, transform 0.4s ease-in-out; /* Apply transition to both border and transform */
+    transition: border 0.4s ease-in, transform 0.4s ease-in-out;
+    /* Apply transition to both border and transform */
 
 }
 
@@ -237,6 +238,47 @@ td {
 .correct-card {
     border: 2px solid rgb(5, 56, 4);
 }
+
+
+.popup {
+    width: 300px;
+    height: 200px;
+    display: none;
+    position: absolute;
+    top: 15%;
+    left: 41%;
+    background-color: rgba(217, 246, 248, 0.959);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.925);
+    z-index: 9999;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out; /* Transition effect for opacity */
+}
+.popup.hidden {
+    opacity: 0; /* When hidden, set opacity to 0 */
+}
+
+
+.popup button {
+    margin-top: 50px;
+    border: 3px solid #0a4751
+}
+.popup p{
+    margin:20px auto;
+    text-align: center;
+    width: 280px;
+}
+
+.popup button:hover {
+    border: 3px solid #1d791a;
+    color: #FFFFFF;
+    background-color: #0a4751;
+    font-weight: 600;
+}
+
+
 
 
 
