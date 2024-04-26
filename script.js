@@ -191,7 +191,7 @@ function selectCard(card) {
     });
     setTimeout(() => {
         checkCGuess(card)
-    }, 400);
+    }, 200);
     updateUserInfo();
 }
 
@@ -263,7 +263,7 @@ function showAlert(AlertText, type) {
             startGame(level);
             enableCardClick();
 
-        }, 600);
+        }, 100);
     });
     popup.appendChild(okButton);
     disableCardClick();
