@@ -158,7 +158,11 @@ function startGame(selectedLevel) {
         const card = document.createElement('div');
         card.className = 'card';
         card.style.backgroundColor = generateRandomColor();
-        card.addEventListener('click', () => selectCard(card));
+        card.addEventListener('click', function () {
+            if (!card.classList.contains('disabled')) {
+                selectCard(card);
+            }
+        });
         cardsContainer.appendChild(card);
         cards.push(card);
     }
@@ -194,6 +198,8 @@ function selectCard(card) {
 
 
 function checkCGuess(card) {
+    disableCardClick();
+
     if (card.style.backgroundColor === targetColor) {
         // alert('გილოცავ შენ გამოიცანი  ფერი !');
 
@@ -220,7 +226,8 @@ function checkCGuess(card) {
 
 function showAlert(AlertText, type) {
 
-    const body = document.body;
+
+
     const popup = document.getElementById('correctPopup');
     popup.style.display = "flex";
 
@@ -254,13 +261,27 @@ function showAlert(AlertText, type) {
             popup.style.display = "none";
             popup.classList.remove('hidden');
             startGame(level);
+            enableCardClick();
 
         }, 600);
     });
     popup.appendChild(okButton);
+    disableCardClick();
 
 }
 
+
+function disableCardClick() {
+    cards.forEach(card => {
+        card.classList.add('disabled');
+    });
+}
+
+function enableCardClick() {
+    cards.forEach(card => {
+        card.classList.remove('disabled');
+    });
+}
 
 function generateRandomColor() {
     let r;
