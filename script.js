@@ -179,6 +179,7 @@ function startGame(selectedLevel) {
 }
 
 function selectCard(card) {
+    disableCardClick();
 
     cards.forEach((c) => {
         if (c.style.backgroundColor === targetColor) {

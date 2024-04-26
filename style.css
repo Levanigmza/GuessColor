@@ -273,7 +273,7 @@ td {
     z-index: 9999;
     text-align: center;
     opacity: 1;
-    transition: opacity 1.5s ease-in-out; 
+    transition: opacity 1.1s ease-in-out; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
